@@ -1,0 +1,112 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { loadResume } from "../data/resume";
+
+const data = loadResume();
+const { contact, summary, skills, experienceProjects, education, certifications } = data;
+---
+
+<BaseLayout title={`${contact.name} — ${contact.headline}`}>
+  <header>
+    <h1>{contact.name}</h1>
+    <p>{contact.headline}</p>
+    <p class="muted">
+      {contact.location}
+      {contact.email && <span> · {contact.email}</span>}
+      <span> · <a href={`https://github.com/${contact.github}`}>{contact.github}</a></span>
+      {contact.linkedin && <span> · <a href={contact.linkedin}>LinkedIn</a></span>}
+    </p>
+  </header>
+
+  <section class="section">
+    <h2>Profile</h2>
+    <hr />
+    {summary && <p>{summary}</p>}
+    {!summary && <p class="muted">Pending: run <code>/cv-capture</code> to populate.</p>}
+  </section>
+
+  <section class="section">
+    <h2>Skills</h2>
+    <hr />
+    {skills.map((group) => (
+      <div style="margin: 0.6rem 0">
+        <strong>{group.category}:</strong>&nbsp;
+        {group.proficient.length > 0 && (
+          <span>{group.proficient.join(", ")}<span class="muted"> · proficient</span></span>
+        )}
+        {group.familiar.length > 0 && (
+          <span> &nbsp;|&nbsp; {group.familiar.join(", ")}<span class="muted"> · familiar</span></span>
+        )}
+        {group.proficient.length === 0 && group.familiar.length === 0 && (
+          <span class="muted">pending</span>
+        )}
+      </div>
+    ))}
+    {skills.length === 0 && <p class="muted">Pending: run <code>/cv-capture</code>.</p>}
+  </section>
+
+  <section class="section">
+    <h2>Experience</h2>
+    <hr />
+    {experienceProjects.map((p) => (
+      <article style="margin: 1rem 0">
+        <h3>{p.title}</h3>
+        <p class="muted" style="margin:0.1rem 0">{(p.start || "…") + (p.end ? ` — ${p.end}` : "")}</p>
+        <p>{p.description || <span class="muted">Pending</span>}</p>
+        {p.bullets.length > 0 && (
+          <ul>
+            {p.bullets.map((b) => (
+              <li>{b}</li>
+            ))}
+          </ul>
+        )}
+        {p.tags.length > 0 && <p class="muted">{p.tags.join(" · ")}</p>}
+      </article>
+    ))}
+    {experienceProjects.length === 0 && <p class="muted">Pending: run <code>/cv-capture</code>.</p>}
+  </section>
+
+  <section class="section">
+    <h2>Education</h2>
+    <hr />
+    {education.map((e) => (
+      <article style="margin: 1rem 0">
+        {e.degree && <h3>{e.degree}</h3>}
+        <p class="muted" style="margin:0.1rem 0">{(e.start || "…") + (e.end ? ` — ${e.end}` : "")}</p>
+        <p>
+          {e.institution || <span class="muted">Pending</span>}
+          {e.gpa && <span class="muted"> · GPA {e.gpa}</span>}
+          {e.honors && <span class="muted"> · {e.honors}</span>}
+          {e.specialization && <span class="muted"> · {e.specialization}</span>}
+        </p>
+      </article>
+    ))}
+    {education.length === 0 && <p class="muted">Pending: run <code>/cv-capture</code>.</p>}
+  </section>
+
+  <section class="section">
+    <h2>Certifications</h2>
+    <hr />
+    {certifications.map((c) => (
+      <p style="margin: 0.4rem 0">
+        {c.name ? (
+          <>
+            <strong>{c.name}</strong>
+            {c.issuer && <span class="muted"> · {c.issuer}</span>}
+            {c.date && <span class="muted"> · {c.date}</span>}
+          </>
+        ) : (
+          <span class="muted">Pending</span>
+        )}
+      </p>
+    ))}
+    {certifications.length === 0 && <p class="muted">Pending: run <code>/cv-capture</code>.</p>}
+  </section>
+
+  <footer class="section muted">
+    <p>
+      Full career record maintained as a single source of truth and rendered here.
+      See the <a href="/estebanmatias92.github.io/resume/">print-friendly resume</a>.
+    </p>
+  </footer>
+</BaseLayout>

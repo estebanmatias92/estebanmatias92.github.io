@@ -1,0 +1,41 @@
+contact:
+  name: ""
+  headline: ""
+  location: ""
+  email: ""
+  phone: ""
+  github: ""
+  linkedin: ""
+  website: ""
+
+summary: ""
+
+skills:
+  - category: "Languages"
+    proficient: []
+    familiar: []
+  - category: "Frameworks & Libraries"
+    proficient: []
+    familiar: []
+  - category: "Tools & Platforms"
+    proficient: []
+    familiar: []
+
+education: []
+
+certifications: []
+
+experienceProjects: []
+
+timelineNotes: []
+
+# Resume variants (per-role clusters): cluster name -> { summary?, featured: [fingerprint...] }
+resumeVariants: {}
+
+# Academic / research extras — stubbed for CV (non-resume) contexts.
+publications: []
+talks: []
+teaching: []
+grants: []
+opensource: []
+volunteer: []

@@ -1,0 +1,119 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { loadResume } from "../data/resume";
+
+const data = loadResume();
+const { contact, summary, skills, experienceProjects, education, certifications } = data;
+const realSkills = skills.filter(
+  (g) => g.proficient.length > 0 || g.familiar.length > 0,
+);
+const realEdu = education.filter((e) => !e.omitOnResume && e.degree);
+const realCerts = certifications.filter((c) => c.name);
+const realExp = experienceProjects.filter((p) => p.title);
+---
+
+<BaseLayout title="Resume — Matias Lapenta">
+  <style slot="head">
+    @page { margin: 0; }
+    .resume { padding: 2rem 1.5rem; }
+    .print-hint { color: var(--muted); font-size: 0.85rem; margin-top: 2rem; }
+    @media print {
+      .container { max-width: 100%; padding: 0; }
+      .print-hint { display: none; }
+      body { background: #fff; }
+      a { color: inherit; text-decoration: none; }
+      .no-print { display: none; }
+      section { page-break-inside: avoid; }
+    }
+  </style>
+
+  <div class="resume">
+    <header style="border-bottom: 2px solid var(--text); padding-bottom: 0.5rem; margin-bottom: 1rem">
+      <h1 style="font-size: 1.6rem">{contact.name}</h1>
+      <p style="margin:0.1rem 0">{contact.headline}</p>
+      <p class="muted" style="margin:0.1rem 0">
+        {contact.location}
+        {contact.email && <span> · {contact.email}</span>}
+        <span> · github.com/{contact.github}</span>
+        {contact.linkedin && <span> · linkedin.com/in/{contact.linkedin}</span>}
+      </p>
+    </header>
+
+    {summary && (
+      <section>
+        <h2>Summary</h2>
+        <hr />
+        <p>{summary}</p>
+      </section>
+    )}
+
+    {realSkills.length > 0 && (
+      <section>
+        <h2>Skills</h2>
+        <hr />
+        {realSkills.map((g) => (
+          <p style="margin: 0.3rem 0">
+            <strong>{g.category}:</strong>&nbsp;{g.proficient.join(", ")}
+            {g.familiar.length > 0 && <span> (familiar: {g.familiar.join(", ")})</span>}
+          </p>
+        ))}
+      </section>
+    )}
+
+    {realExp.length > 0 && (
+      <section>
+        <h2>Experience</h2>
+        <hr />
+        {realExp.map((p) => (
+          <div style="margin: 0.6rem 0">
+            <h3 style="font-size:1rem; display:inline">{p.title}</h3>
+            <span class="muted"> — {p.org || "…"}</span>
+            <span class="muted" style="float:right">
+              {(p.start || "…") + (p.end ? ` – ${p.end}` : "")}
+            </span>
+            {p.bullets.length > 0 && (
+              <ul style="margin: 0.3rem 0 0; padding-left: 1.1rem">
+                {p.bullets.map((b) => (
+                  <li>{b}</li>
+                ))}
+              </ul>
+            )}
+          </div>
+        ))}
+      </section>
+    )}
+
+    {realEdu.length > 0 && (
+      <section>
+        <h2>Education</h2>
+        <hr />
+        {realEdu.map((e) => (
+          <div style="margin: 0.3rem 0">
+            <strong>{e.degree}</strong>
+            <span class="muted"> — {[e.institution, e.specialization].filter(Boolean).join(" · ")}</span>
+            <span class="muted" style="float:right">{(e.start || "…") + (e.end ? ` – ${e.end}` : "")}</span>
+            {(e.gpa || e.honors) && <div class="muted">{[e.gpa && `GPA ${e.gpa}`, e.honors].filter(Boolean).join(" · ")}</div>}
+          </div>
+        ))}
+      </section>
+    )}
+
+    {realCerts.length > 0 && (
+      <section>
+        <h2>Certifications</h2>
+        <hr />
+        {realCerts.map((c) => (
+          <p style="margin: 0.2rem 0">
+            <strong>{c.name}</strong>
+            {c.issuer && <span class="muted"> · {c.issuer}</span>}
+            {c.date && <span class="muted"> · {c.date}</span>}
+          </p>
+        ))}
+      </section>
+    )}
+
+    <p class="print-hint">
+      Use your browser's "Print → Save as PDF" with margins set to None to export a clean single-page resume.
+    </p>
+  </div>
+</BaseLayout>

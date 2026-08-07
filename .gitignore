@@ -1,0 +1,30 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+
+# Astro
+.astro/
+
+# devenv local state
+.devenv/
+# direnv local state (legacy repos still use direnv)
+.direnv/
+
+# Logs
+npm-debug.log*
+*.log
+
+# OS
+.DS_Store
+# Devenv
+.devenv*
+devenv.local.nix
+devenv.local.yaml
+
+# direnv
+.direnv
+
+# pre-commit
+.pre-commit-config.yaml
