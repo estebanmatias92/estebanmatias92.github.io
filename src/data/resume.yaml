@@ -1,36 +1,198 @@
 contact:
-  name: ""
-  headline: ""
-  location: ""
-  email: ""
+  name: "Matias Lapenta"
+  headline: "Software Developer & Educator." # I just change this manually, i like this headline better
+  location: "Mar del Plata, Argentina"
+  email: "estebanmatias92@gmail.com"
   phone: ""
-  github: ""
-  linkedin: ""
-  website: ""
+  github: "https://www.github.com/estebanmatias92/"
+  linkedin: "https://www.linkedin.com/in/estebanmatias92/"
+  website: "https://estebanmatias92.github.io/"
 
-summary: ""
+# I may have to refactor this summary to express the paradigms and skills im building from my study career, like clean architecture agile software development and such (cuz that what the Study Program is aiming to)
+summary: "Methodical software development student and design-first practitioner focused on object-oriented analysis, systems thinking, and domain-driven problem modeling to build evolvable, architecture-guided software."
 
 skills:
-  - category: "Languages"
-    proficient: []
-    familiar: []
+  - category: "Languages" # Maybe i have to filter these lists even more and left only the relevant ones? Or because it is a CV and not a resume it has to have every skill listed?
+    proficient: [C, C++, SQL, JavaScript, Python]
+    familiar: [C#, bash, Nix, PHP]
   - category: "Frameworks & Libraries"
-    proficient: []
-    familiar: []
+    proficient:
+      [
+        WordPress,
+        Tkinter,
+        Laravel,
+        Flask,
+        PostgreSQL,
+        Django,
+        PyGame,
+        Unity Engine,
+      ]
+    familiar: [.NET, Tailwind, React]
   - category: "Tools & Platforms"
-    proficient: []
-    familiar: []
+    proficient:
+      [
+        Docker,
+        Git,
+        CMake,
+        Devenv.sh,
+        Nix Flakes,
+        Linux,
+        SystemD,
+        PHPUnit,
+        PyTest,
+        NixOS,
+      ]
+    familiar: [Github Actions, Mise, Vite, LibVirt, Jupyter Notebook]
 
-education: []
+education:
+  - degree: "Tecnicatura Superior en Análisis de Sistemas Informáticos"
+    institution: "Instituto Superior de Formación Técnica N151"
+    location: "Mar del Plata, Argentina"
+    start: "2025"
+    end: "2027 (expected)"
+    gpa: ""
+    honors: ""
+    specialization: ""
+    omitOnResume: false
+  - degree: "Técnico en Comunicación Multimedial"
+    institution: "Escuela de Educación Secundaria Técnica N1 “Luis Piedra Buena”"
+    location: "Mar del Plata, Argentina"
+    start: "2008"
+    end: "2010"
+    gpa: ""
+    honors: ""
+    specialization: ""
+    omitOnResume: false
 
-certifications: []
+certifications:
+  - name: "Instructor en Formación Profesional"
+    issuer: "Centro de Formación de Administración Pública"
+    date: "2023"
+    expiry: ""
+    url: ""
+    verified: true
+  - name: "Especialización Profesional en Administración de Base de Datos"
+    issuer: "Centro de Formación Profesional N402"
+    date: "2023"
+    expiry: ""
+    url: ""
+    verified: true
+  - name: "Programador"
+    issuer: "Centro de Formación Profesional N401"
+    date: "2022"
+    expiry: ""
+    url: ""
+    verified: true
+  - name: "Responsive Web Design"
+    issuer: "FreeCodeCamp.org"
+    date: "2021"
+    expiry: ""
+    url: ""
+    verified: false
 
-experienceProjects: []
+experienceProjects:
+  - fingerprint: "tecnicatura-ppii-patterns"
+    title: "Professional Practice II: refactoring and design patterns"
+    org: "ISFT N151"
+    start: "2026"
+    end: "2026"
+    description: "Professional-practice work on Vault Bibliotech refactoring and Visitor/Observer pattern analysis, including focused investigation of Visitor."
+    bullets: []
+    tags: ["refactoring", "design-patterns", "visitor", "observer"]
+  - fingerprint: "tecnicatura-db-bibliotech"
+    title: "Database coursework: Bibliotech design and SQL programming"
+    org: "ISFT N151"
+    start: "2026"
+    end: "2026"
+    description: "Database coursework around Bibliotech schema design, SQL functions, transactions, stored procedures, and views."
+    bullets: []
+    tags: ["sql", "database-design", "transactions", "stored-procedures"]
+  - fingerprint: "ooad-workflow"
+    title: "OOAD Workflow: agentic software-engineering framework"
+    org: "Personal project"
+    start: "2026"
+    end: "2026"
+    description: "Authored a stack-agnostic OOAD agentic framework/distribution pack with RUP/Waterfall/Agile profiles, Clean-architecture layers, TDD workflow, skills, and templates."
+    bullets: []
+    tags: ["ooad", "clean-architecture", "tdd", "automation"]
+  - fingerprint: "obsidian-academic-cms"
+    title: "Obsidian Academic CMS/plugin"
+    org: "Personal project"
+    start: "2026"
+    end: "2026"
+    description: "Personal Obsidian Academic CMS/plugin effort migrating Templater-based academic workflows toward a domain-modeled Obsidian plugin using the Obsidian API."
+    bullets: []
+    tags: ["javascript", "obsidian", "domain-modeling"]
+  - fingerprint: "partui"
+    title: "partui: POSIX disk partitioning and mounting tool"
+    org: "Personal project"
+    start: "2026"
+    end: "2026"
+    description: "POSIX-compliant shell tool for partitioning, formatting, and mounting storage devices in live-CD and automated Linux workflows."
+    bullets: []
+    tags: ["shell", "linux", "automation"]
+  - fingerprint: "instructor-cfp403-programador"
+    title: "Instructor de Formación Profesional — Programador"
+    org: "Centro de Formación Profesional N403 “René Favaloro”"
+    start: "2025"
+    end: "2025"
+    description: "Taught the vocational “Programador” programming course."
+    bullets: []
+    tags: ["teaching", "programming"]
+  - fingerprint: "flask-blog"
+    title: "Flask educational blog"
+    org: "Personal project"
+    start: "2023"
+    end: "2023"
+    description: "Full-feature Flask and Bootstrap blog built for educational purposes."
+    bullets: []
+    tags: ["python", "flask", "web"]
+  - fingerprint: "instructor-cfl415-python"
+    title: "Instructor de Formación Profesional — Python"
+    org: "Centro de Formación Laboral N415 “Islas Malvinas”"
+    start: "2023"
+    end: "2023"
+    description: "Taught vocational courses in Python programming and advanced Python for data science."
+    bullets: []
+    tags: ["teaching", "python", "data-science"]
+  - fingerprint: "rinboku-ecommerce"
+    title: "Rinboku: ASP.NET MVC ecommerce application"
+    org: "CFL 401"
+    start: "2022"
+    end: "2022"
+    description: "ASP.NET 6 MVC ecommerce application built as the CFL 401 programming final project."
+    bullets: []
+    tags: ["csharp", "dotnet", "ecommerce", "web"]
 
-timelineNotes: []
+timelineNotes:
+  - period: "2010–2021"
+    note: "Worked independently as an electrician; did occasional PC repair and OS installation/formatting and continued self-taught programming study; no contracted IT work."
+  - period: "2023–2025"
+    note: "Independent electrical work continued; no contracted IT/teaching entries collected for this interval."
 
 # Resume variants (per-role clusters): cluster name -> { summary?, featured: [fingerprint...] }
-resumeVariants: {}
+resumeVariants:
+  requirements-analyst:
+    featured:
+      - "tecnicatura-db-bibliotech"
+      - "tecnicatura-ppii-patterns"
+      - "ooad-workflow"
+  backend-developer:
+    featured:
+      - "tecnicatura-db-bibliotech"
+      - "flask-blog"
+      - "rinboku-ecommerce"
+      - "partui"
+  educator-instructor:
+    featured:
+      - "instructor-cfl415-python"
+      - "instructor-cfp403-programador"
+      - "flask-blog"
+  automation-tooling:
+    featured:
+      - "ooad-workflow"
+      - "partui"
+      - "obsidian-academic-cms"
 
 # Academic / research extras — stubbed for CV (non-resume) contexts.
 publications: []
