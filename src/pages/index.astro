@@ -50,7 +50,7 @@ const { contact, summary, skills, experienceProjects, education, certifications 
     <hr />
     {experienceProjects.map((p) => (
       <article style="margin: 1rem 0">
-        <h3>{p.title}</h3>
+        <h3>{p.url ? <a href={p.url}>{p.title}</a> : p.title}</h3>
         <p class="muted" style="margin:0.1rem 0">{(p.start || "…") + (p.end ? ` — ${p.end}` : "")}</p>
         <p>{p.description || <span class="muted">Pending</span>}</p>
         {p.bullets.length > 0 && (

@@ -40,6 +40,9 @@ export interface ResumeData {
     start: string;
     end: string;
     description: string;
+    // Repo-only rule: url may hold a repository URL. Roles, teaching posts,
+    // institutions, and non-repo coursework containers must use "".
+    url: string;
     bullets: string[];
     tags: string[];
   }[];

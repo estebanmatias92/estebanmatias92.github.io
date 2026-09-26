@@ -97,6 +97,7 @@ experienceProjects:
     start: "2026"
     end: "2026"
     description: "Professional-practice work on Vault Bibliotech refactoring and Visitor/Observer pattern analysis, including focused investigation of Visitor."
+    url: "https://github.com/estebanmatias92/tecnicatura-practicas-profesionalizantes-ii"
     bullets: []
     tags: ["refactoring", "design-patterns", "visitor", "observer"]
   - fingerprint: "tecnicatura-db-bibliotech"
@@ -105,6 +106,7 @@ experienceProjects:
     start: "2026"
     end: "2026"
     description: "Database coursework around Bibliotech schema design, SQL functions, transactions, stored procedures, and views."
+    url: "https://github.com/estebanmatias92/tecnicatura-base-de-datos"
     bullets: []
     tags: ["sql", "database-design", "transactions", "stored-procedures"]
   - fingerprint: "ooad-workflow"
@@ -113,6 +115,7 @@ experienceProjects:
     start: "2026"
     end: "2026"
     description: "Authored a stack-agnostic OOAD agentic framework/distribution pack with RUP/Waterfall/Agile profiles, Clean-architecture layers, TDD workflow, skills, and templates."
+    url: "https://github.com/estebanmatias92/ooad-workflow"
     bullets: []
     tags: ["ooad", "clean-architecture", "tdd", "automation"]
   - fingerprint: "obsidian-academic-cms"
@@ -121,6 +124,7 @@ experienceProjects:
     start: "2026"
     end: "2026"
     description: "Personal Obsidian Academic CMS/plugin effort migrating Templater-based academic workflows toward a domain-modeled Obsidian plugin using the Obsidian API."
+    url: "https://github.com/estebanmatias92/obsidian-academic-cms"
     bullets: []
     tags: ["javascript", "obsidian", "domain-modeling"]
   - fingerprint: "partui"
@@ -129,6 +133,7 @@ experienceProjects:
     start: "2026"
     end: "2026"
     description: "POSIX-compliant shell tool for partitioning, formatting, and mounting storage devices in live-CD and automated Linux workflows."
+    url: "https://github.com/estebanmatias92/partui"
     bullets: []
     tags: ["shell", "linux", "automation"]
   - fingerprint: "instructor-cfp403-programador"
@@ -137,6 +142,7 @@ experienceProjects:
     start: "2025"
     end: "2025"
     description: "Taught the vocational “Programador” programming course."
+    url: ""
     bullets: []
     tags: ["teaching", "programming"]
   - fingerprint: "flask-blog"
@@ -145,6 +151,7 @@ experienceProjects:
     start: "2023"
     end: "2023"
     description: "Full-feature Flask and Bootstrap blog built for educational purposes."
+    url: "https://github.com/estebanmatias92/flask-blog"
     bullets: []
     tags: ["python", "flask", "web"]
   - fingerprint: "instructor-cfl415-python"
@@ -153,6 +160,7 @@ experienceProjects:
     start: "2023"
     end: "2023"
     description: "Taught vocational courses in Python programming and advanced Python for data science."
+    url: ""
     bullets: []
     tags: ["teaching", "python", "data-science"]
   - fingerprint: "rinboku-ecommerce"
@@ -161,6 +169,7 @@ experienceProjects:
     start: "2022"
     end: "2022"
     description: "ASP.NET 6 MVC ecommerce application built as the CFL 401 programming final project."
+    url: "https://github.com/estebanmatias92/Rinboku"
     bullets: []
     tags: ["csharp", "dotnet", "ecommerce", "web"]
 

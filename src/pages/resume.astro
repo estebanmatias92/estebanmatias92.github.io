@@ -66,7 +66,7 @@ const realExp = experienceProjects.filter((p) => p.title);
         <hr />
         {realExp.map((p) => (
           <div style="margin: 0.6rem 0">
-            <h3 style="font-size:1rem; display:inline">{p.title}</h3>
+            <h3 style="font-size:1rem; display:inline">{p.url ? <a href={p.url}>{p.title}</a> : p.title}</h3>
             <span class="muted"> — {p.org || "…"}</span>
             <span class="muted" style="float:right">
               {(p.start || "…") + (p.end ? ` – ${p.end}` : "")}

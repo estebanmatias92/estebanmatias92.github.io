@@ -11,6 +11,7 @@ Astro 5 static CV site. SSOT: `src/data/resume.yaml` → `src/data/resume.ts:loa
 * Single package, no workspaces, no tests, no lint.
 * `resumeVariants` in YAML (by `fingerprint`) is dead data — neither page filters by it yet.
 * `experienceProjects[].bullets[]` all empty; pages fall back to `description`.
+* `experienceProjects[].url` is repo-only: repository URLs only; roles, teaching posts, institutions, and non-repo coursework containers must use `""`.
 * Only static asset: `public/favicon.svg`. Build output `dist/` (`index.html + resume/`).
 
 ## Gotchas
